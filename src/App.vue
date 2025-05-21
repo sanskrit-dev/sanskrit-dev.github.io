@@ -32,14 +32,14 @@ body {
 }
 
 .bg-sanskrit {
-  background-color: #FF7722;
+  @apply bg-cyan-600;
 }
 
 .text-sanskrit {
-  color: #FF7722;
+  @apply text-amber-500;
 }
 
 .border-sanskrit {
-  border-color: #FF7722;
+  @apply border-amber-600;
 }
 </style>

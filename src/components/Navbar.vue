@@ -15,7 +15,7 @@
 
       <!-- Desktop Login Button -->
       <div class="hidden md:block">
-        <button @click="login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-orange-600 transition duration-300">
+        <button @click="login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
           Login
         </button>
       </div>
@@ -47,7 +47,7 @@
             <router-link @click="toggleMobileMenu" to="/explore" class="text-gray-800 hover:text-sanskrit font-medium">Explore</router-link>
             <router-link @click="toggleMobileMenu" to="/pricing" class="text-gray-800 hover:text-sanskrit font-medium">Pricing</router-link>
             <router-link @click="toggleMobileMenu" to="/contact" class="text-gray-800 hover:text-sanskrit font-medium">Contact</router-link>
-            <button @click="login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-orange-600 transition duration-300">
+            <button @click="login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
               Login
             </button>
           </div>

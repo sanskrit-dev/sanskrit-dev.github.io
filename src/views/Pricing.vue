@@ -29,7 +29,7 @@
             <button 
               :class="[
                 'w-full py-3 px-4 rounded-lg font-medium',
-                plan.popular ? 'bg-sanskrit text-white hover:bg-orange-600' : 'border-2 border-sanskrit text-sanskrit hover:bg-orange-50'
+                plan.popular ? 'bg-sanskrit text-white hover:bg-amber-600' : 'border-2 border-sanskrit text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer'
               ]"
               class="transition duration-300"
             >
@@ -84,7 +84,7 @@ const plans = ref([
             },
             {
               name: "Developer",
-              price: "$9.99",
+              price: "₹100",
               period: "per month",
               description: "For developers building Sanskrit tools",
               features: [
@@ -96,7 +96,7 @@ const plans = ref([
                 "Email support"
               ],
               cta: "Start Developing",
-              popular: true
+              popular: false
             },
             {
               name: "Enterprise",
