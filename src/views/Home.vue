@@ -6,7 +6,7 @@
               <h1 class="text-4xl md:text-5xl font-bold mb-6">Make <span class="text-sanskrit">sanskrit.dev</span> yours</h1>
               <div class="text-xl md:text-2xl text-gray-600 h-12">
                 <transition name="fade" mode="out-in">
-                  <p :key="currentTextIndex">Have you built {{ texts[currentTextIndex] }}</p>
+                  <p :key="currentTextIndex">{{ texts[currentTextIndex] }}</p>
                 </transition>
               </div>
                 <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center">
@@ -99,11 +99,12 @@ import { ref, onMounted } from 'vue';
 
 const currentTextIndex = ref(0);
 const texts = ref([
-  "anything related to Sanskrit?",
-  "a Sanskrit learning tool?",
-  "a word game in Sanskrit?",
-  "your Sanskrit blog?",
-  "a Sanskrit text repository?"
+  "Have you built anything related to Sanskrit?",
+  "Have you built a Sanskrit learning tool?",
+  "Have you built a word game in Sanskrit?",
+  "Do you have your Sanskrit blog?",
+  "Do you wish to build your Sanskrit blog?",
+  "Do you wish to host your Sanskrit tool?"
 ]);
 
 const featuredTools = ref([
