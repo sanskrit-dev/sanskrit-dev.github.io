@@ -15,9 +15,9 @@
 
       <!-- Desktop Login Button -->
       <div class="hidden md:block">
-        <button @click="login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
+        <router-link to="/login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
           Login
-        </button>
+        </router-link>
       </div>
 
       <!-- Mobile Hamburger Button -->
@@ -47,9 +47,9 @@
             <router-link @click="toggleMobileMenu" to="/explore" class="text-gray-800 hover:text-sanskrit font-medium">Explore</router-link>
             <router-link @click="toggleMobileMenu" to="/pricing" class="text-gray-800 hover:text-sanskrit font-medium">Pricing</router-link>
             <router-link @click="toggleMobileMenu" to="/contact" class="text-gray-800 hover:text-sanskrit font-medium">Contact</router-link>
-            <button @click="login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
+            <router-link to="/login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300 cursor-pointer">
               Login
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -66,9 +66,6 @@ const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
 
-const login = () => {
-  alert('Google OAuth login will be implemented here');
-};
 </script>
 
 <style>
