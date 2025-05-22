@@ -13,11 +13,22 @@
         <router-link to="/contact" class="text-gray-800 hover:text-sanskrit font-medium">Contact</router-link>
       </div>
 
-      <!-- Desktop Login Button -->
-      <div class="hidden md:block">
-        <router-link to="/login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
-          Login
-        </router-link>
+      <!-- Desktop Auth Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <template v-if="user">
+          <span class="text-gray-700">{{ user.displayName || user.email }}</span>
+          <button @click="handleLogout" class="bg-amber-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-red-600 transition duration-300 cursor-pointer">
+            Logout
+          </button>
+        </template>
+        <template v-else>
+          <router-link to="/register" class="text-sanskrit hover:text-amber-600 font-medium">
+            Register
+          </router-link>
+          <router-link to="/login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
+            Login
+          </router-link>
+        </template>
       </div>
 
       <!-- Mobile Hamburger Button -->
@@ -30,10 +41,7 @@
 
     <!-- Mobile Sidebar -->
     <transition name="slide">
-      <div 
-        v-if="isMobileMenuOpen" 
-        class="fixed right-0 top-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300"
-      >
+      <div v-if="isMobileMenuOpen" class="fixed right-0 top-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300">
         <div class="p-6">
           <div class="flex justify-end">
             <button @click="toggleMobileMenu" class="text-gray-500">
@@ -43,13 +51,27 @@
             </button>
           </div>
           <div class="mt-8 flex flex-col space-y-4">
+            <template v-if="user">
+              <span class="text-gray-700 font-medium">{{ user.displayName || user.email }}</span>
+            </template>
             <router-link @click="toggleMobileMenu" to="/" class="text-gray-800 hover:text-sanskrit font-medium">Home</router-link>
             <router-link @click="toggleMobileMenu" to="/explore" class="text-gray-800 hover:text-sanskrit font-medium">Explore</router-link>
             <router-link @click="toggleMobileMenu" to="/pricing" class="text-gray-800 hover:text-sanskrit font-medium">Pricing</router-link>
             <router-link @click="toggleMobileMenu" to="/contact" class="text-gray-800 hover:text-sanskrit font-medium">Contact</router-link>
-            <router-link to="/login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300 cursor-pointer">
-              Login
-            </router-link>
+            
+            <template v-if="user">
+              <button @click="handleLogout" class="bg-amber-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-red-600 transition duration-300 cursor-pointer">
+                Logout
+              </button>
+            </template>
+            <template v-else>
+              <router-link to="/register" @click="toggleMobileMenu" class="text-sanskrit hover:text-amber-600 font-medium">
+                Register
+              </router-link>
+              <router-link to="/login" @click="toggleMobileMenu" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
+                Login
+              </router-link>
+            </template>
           </div>
         </div>
       </div>
@@ -59,13 +81,22 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useAuth } from '../composables/useAuth';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+const { user, logout } = useAuth();
 const isMobileMenuOpen = ref(false);
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
 
+const handleLogout = async () => {
+  await logout();
+  isMobileMenuOpen.value = false;
+  router.push('/');
+};
 </script>
 
 <style>
