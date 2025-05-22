@@ -35,6 +35,10 @@ body {
   @apply bg-cyan-600;
 }
 
+.bg-sanskrit:hover {
+  @apply bg-cyan-700;
+}
+
 .text-sanskrit {
   @apply text-amber-500;
 }

@@ -7,10 +7,10 @@
       
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-8">
-        <router-link to="/" class="text-gray-800 hover:text-sanskrit font-medium">Home</router-link>
-        <router-link to="/explore" class="text-gray-800 hover:text-sanskrit font-medium">Explore</router-link>
-        <router-link to="/pricing" class="text-gray-800 hover:text-sanskrit font-medium">Pricing</router-link>
-        <router-link to="/contact" class="text-gray-800 hover:text-sanskrit font-medium">Contact</router-link>
+        <router-link to="/" class="text-gray-800 hover:text-amber-500 font-medium transition-colors duration-200">Home</router-link>
+        <router-link to="/explore" class="text-gray-800 hover:text-amber-500 font-medium transition-colors duration-200">Explore</router-link>
+        <router-link to="/pricing" class="text-gray-800 hover:text-amber-500 font-medium transition-colors duration-200">Pricing</router-link>
+        <router-link to="/contact" class="text-gray-800 hover:text-amber-500 font-medium transition-colors duration-200">Contact</router-link>
       </div>
 
       <!-- Desktop Auth Buttons -->
@@ -54,10 +54,10 @@
             <template v-if="user">
               <span class="text-gray-700 font-medium">{{ user.displayName || user.email }}</span>
             </template>
-            <router-link @click="toggleMobileMenu" to="/" class="text-gray-800 hover:text-sanskrit font-medium">Home</router-link>
-            <router-link @click="toggleMobileMenu" to="/explore" class="text-gray-800 hover:text-sanskrit font-medium">Explore</router-link>
-            <router-link @click="toggleMobileMenu" to="/pricing" class="text-gray-800 hover:text-sanskrit font-medium">Pricing</router-link>
-            <router-link @click="toggleMobileMenu" to="/contact" class="text-gray-800 hover:text-sanskrit font-medium">Contact</router-link>
+            <router-link @click="toggleMobileMenu" to="/" class="text-gray-800 hover:text-amber-500 font-medium">Home</router-link>
+            <router-link @click="toggleMobileMenu" to="/explore" class="text-gray-800 hover:text-amber-500 font-medium">Explore</router-link>
+            <router-link @click="toggleMobileMenu" to="/pricing" class="text-gray-800 hover:text-amber-500 font-medium">Pricing</router-link>
+            <router-link @click="toggleMobileMenu" to="/contact" class="text-gray-800 hover:text-amber-500 font-medium">Contact</router-link>
             
             <template v-if="user">
               <button @click="handleLogout" class="bg-amber-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-red-600 transition duration-300 cursor-pointer">

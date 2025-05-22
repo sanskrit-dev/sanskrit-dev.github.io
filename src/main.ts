@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -14,7 +14,7 @@ import Pricing from './views/Pricing.vue';
 import Contact from './views/Contact.vue';
 import Register from './views/Register.vue';
 import Login from './views/Login.vue';
-// import NotFound from './views/NotFound.vue';
+import NotFound from './views/NotFound.vue';
 
 // Router Configuration
 const routes = [
@@ -24,11 +24,12 @@ const routes = [
   { path: '/contact', component: Contact },
   { path: '/login', component: Login },
   { path: '/register', component: Register },
-  // { path: '/:pathMatch(.*)*', component: NotFound }
+  { path: '/:pathMatch(.*)*', component: NotFound }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
+  // history: createWebHashHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     // Always scroll to top when navigating to a new route
