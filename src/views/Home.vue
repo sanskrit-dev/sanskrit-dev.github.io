@@ -100,11 +100,11 @@ import { ref, onMounted } from 'vue';
 const currentTextIndex = ref(0);
 const texts = ref([
   "Have you built anything related to Sanskrit?",
+  "Do you have your Sanskrit blog in Wordpress?",
   "Have you built a Sanskrit learning tool?",
+  "Do you wish to host your Sanskrit tool?",
   "Have you built a word game in Sanskrit?",
-  "Do you have your Sanskrit blog?",
   "Do you wish to build your Sanskrit blog?",
-  "Do you wish to host your Sanskrit tool?"
 ]);
 
 const featuredTools = ref([
