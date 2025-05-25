@@ -35,7 +35,7 @@ body {
   @apply bg-cyan-600;
 }
 
-.bg-sanskrit:hover {
+a.bg-sanskrit:hover {
   @apply bg-cyan-700;
 }
 

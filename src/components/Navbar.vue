@@ -32,7 +32,7 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button @click="toggleMobileMenu" class="md:hidden">
+      <button @click="toggleMobileMenu" class="md:hidden hamburger-button cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -41,10 +41,10 @@
 
     <!-- Mobile Sidebar -->
     <transition name="slide">
-      <div v-if="isMobileMenuOpen" class="fixed right-0 top-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300">
+      <div v-if="isMobileMenuOpen" class="fixed right-0 top-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 mobile-sidebar">
         <div class="p-6">
           <div class="flex justify-end">
-            <button @click="toggleMobileMenu" class="text-gray-500">
+            <button @click="toggleMobileMenu" class="text-gray-500 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -80,7 +80,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useAuth } from '../composables/useAuth';
 import { useRouter } from 'vue-router';
 
@@ -97,6 +97,28 @@ const handleLogout = async () => {
   isMobileMenuOpen.value = false;
   router.push('/');
 };
+
+const handleClickOutside = (event) => {
+  const sidebar = document.querySelector('.mobile-sidebar');
+  const hamburger = document.querySelector('.hamburger-button');
+  if (
+    isMobileMenuOpen.value &&
+    !(sidebar && sidebar.contains(event.target)) &&
+    !(hamburger && hamburger.contains(event.target))
+  ) {
+    isMobileMenuOpen.value = false;
+  }
+};
+
+// Add event listener when component is mounted
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+// Clean up event listener when component is unmounted
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
 </script>
 
 <style>
