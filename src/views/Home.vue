@@ -31,7 +31,7 @@
                       <path d="M5.5 16.5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2zm6 0a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2zm-6-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2zm6 0a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2z"></path>
                     </svg>
                   </div>
-                  <h3 class="text-xl font-semibold mb-3">Free Domain Hosting</h3>
+                  <h3 class="text-xl font-semibold mb-3">Free Domain Name</h3>
                   <p class="text-gray-600">Get your own personalized subdomain on sanskrit.dev completely free for personal projects</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
