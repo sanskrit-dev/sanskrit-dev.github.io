@@ -1,17 +1,20 @@
 <template>
-  <div class="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+  <div class="min-h-screen bg-gray-50 flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full h-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
       <div>
         <h1 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h1>
         <p class="mt-2 text-center text-sm text-gray-600">
-          Welcome back to Sanskrit.dev
+          Welcome to Sanskrit.dev
+        </p>
+        <p class="mt-2 text-center text-sm text-gray-600">
+          Login with Google to automatically register.
         </p>
       </div>
       
       <div v-if="error" class="rounded-md bg-red-50 p-4">
         <div class="text-sm text-red-700">{{ error }}</div>
       </div>
-
+<!-- 
       <form class="mt-8 space-y-6" @submit.prevent="login">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
@@ -57,24 +60,24 @@
         <div class="relative flex justify-center text-sm">
           <span class="px-2 bg-white text-gray-500">Or continue with</span>
         </div>
-      </div>
+      </div> -->
 
       <div>
         <button
           type="button"
           @click="signInWithGoogle"
-          class="w-full flex justify-center items-center gap-2 py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer"
+          class="w-full flex items-center justify-center border border-orange-700 text-white bg-orange-700 text-sm font-medium gap-2 py-2 px-4 rounded shadow hover:bg-orange-800 hover:text-white transition duration-200 cursor-pointer"
         >
           <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5" />
-          Continue with Google
+          {{ loading ? 'Logging in...' : 'Continue with Google' }}
         </button>
       </div>
 
-      <div class="text-center">
+      <!-- <div class="text-center">
         <router-link to="/register" class="font-medium text-amber-600 hover:text-amber-500">
           Don't have an account? Sign up
         </router-link>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

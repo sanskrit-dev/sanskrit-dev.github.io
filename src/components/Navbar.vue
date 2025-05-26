@@ -22,9 +22,9 @@
           </button>
         </template>
         <template v-else>
-          <router-link to="/register" class="text-sanskrit hover:text-amber-600 font-medium">
+          <!-- <router-link to="/register" class="text-sanskrit hover:text-amber-600 font-medium">
             Register
-          </router-link>
+          </router-link> -->
           <router-link to="/login" class="bg-sanskrit text-white py-2 px-4 rounded-lg font-medium hover:bg-amber-600 transition duration-300">
             Login
           </router-link>

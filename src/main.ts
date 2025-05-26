@@ -12,7 +12,7 @@ import Home from './views/Home.vue';
 import Explore from './views/Explore.vue';
 import Pricing from './views/Pricing.vue';
 import Contact from './views/Contact.vue';
-import Register from './views/Register.vue';
+// import Register from './views/Register.vue';
 import Login from './views/Login.vue';
 import NotFound from './views/NotFound.vue';
 
@@ -23,7 +23,7 @@ const routes = [
   { path: '/pricing', component: Pricing },
   { path: '/contact', component: Contact },
   { path: '/login', component: Login },
-  { path: '/register', component: Register },
+  // { path: '/register', component: Register },
   { path: '/:pathMatch(.*)*', component: NotFound }
 ];
 

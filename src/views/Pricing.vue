@@ -26,7 +26,7 @@
                 <span>{{ feature }}</span>
               </li>
             </ul>
-            <button 
+            <router-link :to="plan.link" 
               :class="[
                 'w-full py-3 px-4 rounded-lg font-medium',
                 plan.popular ? 'bg-sanskrit text-white hover:bg-amber-600' : 'border-2 border-sanskrit text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer'
@@ -34,7 +34,7 @@
               class="transition duration-300"
             >
               {{ plan.cta }}
-            </button>
+            </router-link :to="{{ plan.link }}">
           </div>
         </div>
       </div>
@@ -80,6 +80,7 @@ const plans = ref([
                 "Email / Telegram support"
               ],
               cta: "Get Started",
+              link: "/login",
               popular: false
             },
             {
@@ -96,6 +97,7 @@ const plans = ref([
                 "50GB bandwidth",
               ],
               cta: "Start Developing",
+              link: "/login",
               popular: false
             },
             {
@@ -109,6 +111,7 @@ const plans = ref([
                 "Custom integrations"
               ],
               cta: "Contact Us",
+              link: "/contact",
               popular: false
             }
             ])
