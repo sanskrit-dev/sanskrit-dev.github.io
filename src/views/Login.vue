@@ -86,6 +86,8 @@
 import { ref } from 'vue'
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { useRouter } from 'vue-router'
+import { useAuth } from '../composables/useAuth'
+import { watch } from 'vue'
 
 const email = ref('')
 const password = ref('')
@@ -93,14 +95,24 @@ const error = ref('')
 const loading = ref(false)
 const router = useRouter()
 
+const { user } = useAuth()
+
+watch(user, (val) => {
+  if (val) {
+    const to = router.currentRoute.value.query.to || '/explore'
+    router.push(to)
+  }
+}, { immediate: true })
+
 const login = async () => {
     error.value = ''
     loading.value = true
     
     try {
-        const auth = getAuth()
-        await signInWithEmailAndPassword(auth, email.value, password.value)
-        router.push('/explore')
+      const auth = getAuth()
+      await signInWithEmailAndPassword(auth, email.value, password.value)
+      const to = router.currentRoute.value.query.to || '/explore'
+      router.push(to)
     } catch (err) {
         switch (err.code) {
             case 'auth/user-not-found':

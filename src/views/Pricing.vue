@@ -23,7 +23,7 @@
                 <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
-                <span>{{ feature }}</span>
+                <span v-html="feature"></span>
               </li>
             </ul>
             <router-link :to="plan.link" 
@@ -34,7 +34,7 @@
               class="transition duration-300"
             >
               {{ plan.cta }}
-            </router-link :to="{{ plan.link }}">
+            </router-link>
           </div>
         </div>
       </div>
@@ -66,7 +66,10 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useAuth } from '../composables/useAuth';
+const { user } = useAuth();
 
+const developerLink = user.value ? '/payment' : '/login?to=/payment'
 const plans = ref([
 
             {
@@ -77,7 +80,7 @@ const plans = ref([
                 "Free subdomain (yourname.sanskrit.dev)",
                 "CNAME record support",
                 "Personal webpage hosting",
-                "Email / Telegram support"
+                "Community support"
               ],
               cta: "Get Started",
               link: "/login",
@@ -89,15 +92,14 @@ const plans = ref([
               period: "for 6 months",
               description: "For developers building Sanskrit tools",
               features: [
-                "Everything in Hobbyist",
-                "Live discussion every week",
+                "Everything in Hobbyist +",
+                "<span class='text-red-600'>Live discussion every week</span>",
                 "Tool hosting",
-                "API access",
                 "1GB storage",
                 "50GB bandwidth",
               ],
               cta: "Start Developing",
-              link: "/login",
+              link: developerLink,
               popular: false
             },
             {
@@ -105,7 +107,7 @@ const plans = ref([
               price: "Custom",
               description: "For organizations with specific needs",
               features: [
-                "Everything in Developer",
+                "Everything in Developer +",
                 "Custom hosting solutions",
                 "Priority support",
                 "Custom integrations"

@@ -15,12 +15,14 @@ import Contact from './views/Contact.vue';
 // import Register from './views/Register.vue';
 import Login from './views/Login.vue';
 import NotFound from './views/NotFound.vue';
+import Payment from './views/Payment.vue';
 
 // Router Configuration
 const routes = [
   { path: '/', component: Home },
   { path: '/explore', component: Explore },
   { path: '/pricing', component: Pricing },
+  { path: '/payment', component: Payment },
   { path: '/contact', component: Contact },
   { path: '/login', component: Login },
   // { path: '/register', component: Register },
