@@ -48,15 +48,15 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">What's the difference between personal webpage hosting and tool hosting?</h3>
-            <p class="text-gray-600">Personal webpage hosting is suitable for static websites and blogs. Tool hosting provides server-side capabilities, allowing you to host interactive applications, APIs, and other dynamic content that requires backend processing.</p>
+            <p class="text-gray-600">Personal webpage hosting is suitable for static websites and blogs (Wordpress, Blogger etc.). Tool hosting provides server-side capabilities, allowing you to host interactive applications, APIs, and other dynamic content that requires backend processing.</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">Can I upgrade or downgrade my plan later?</h3>
-            <p class="text-gray-600">Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged the prorated difference for the remainder of your billing cycle. When downgrading, the new rate will apply at the start of your next billing cycle.</p>
+            <p class="text-gray-600">Yes, you can upgrade or downgrade your plan at any time.</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">Do you offer custom solutions?</h3>
-            <p class="text-gray-600">Yes, our Enterprise plan offers custom hosting solutions for organizations with specific needs. Please contact us to discuss your requirements, and we'll tailor a solution for you.</p>
+            <p class="text-gray-600">Yes, we offer custom hosting solutions for organizations with specific needs. Please contact us to discuss your requirements, and we'll tailor a solution for you.</p>
           </div>
         </div>
       </div>
@@ -77,23 +77,23 @@ const plans = ref([
                 "Free subdomain (yourname.sanskrit.dev)",
                 "CNAME record support",
                 "Personal webpage hosting",
-                "Community support"
+                "Email / Telegram support"
               ],
               cta: "Get Started",
               popular: false
             },
             {
               name: "Developer",
-              price: "₹100",
-              period: "per month",
+              price: "₹600",
+              period: "for 6 months",
               description: "For developers building Sanskrit tools",
               features: [
                 "Everything in Hobbyist",
+                "Live discussion every week",
                 "Tool hosting",
                 "API access",
                 "1GB storage",
                 "50GB bandwidth",
-                "Email support"
               ],
               cta: "Start Developing",
               popular: false
@@ -105,12 +105,11 @@ const plans = ref([
               features: [
                 "Everything in Developer",
                 "Custom hosting solutions",
-                "Unlimited storage",
-                "Unlimited bandwidth",
                 "Priority support",
                 "Custom integrations"
               ],
               cta: "Contact Us",
               popular: false
-            }])
+            }
+            ])
 </script>
